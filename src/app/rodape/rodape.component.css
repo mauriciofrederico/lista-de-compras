@@ -1,0 +1,8 @@
+.bgColor {
+    background-color: #1E659B !important;
+}
+
+.page-footer,
+.page-wrap:after {
+    height: 120px;
+}
