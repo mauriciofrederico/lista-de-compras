@@ -2,11 +2,7 @@
     <br>
     <h5>{{subTitulo}}</h5>
     <div class="row">
-        <div class="col s12">
-            <div class="card-panel white-text" [hidden]="!this.message" [class.red]="!this.success" [class.blue]="this.success">
-                {{ this.message }}
-            </div>
-        </div>
+       <app-mensagem [success]="this.success" [message]="this.message" (avisoEvent)="this.onAvisoEvent($event)" (erroEvent)="this.onErroEvent($event)"></app-mensagem>
         <form class="col s12" (submit)="onSubmit()">
 
             <div class="row">
@@ -19,9 +15,15 @@
             <div class="row">
                 <div class="input-field col s9">
                     <input id="descricao" name="descricao" type="text" class="validate" [(ngModel)]="this.descricao">
-                    <label for="id">Descrição</label>
+                    <label for="descricao">Descrição</label>
                 </div>
             </div>
+            <div class="row">
+              <div class="input-field col s9">
+                  <input id="marca" name="marca" type="text" class="validate" [(ngModel)]="this.marca">
+                  <label for="marca">Marca</label>
+              </div>
+          </div>
 
             <div class="row">
                 <div class="input-field col s6">

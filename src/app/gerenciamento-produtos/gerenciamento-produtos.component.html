@@ -1,0 +1,46 @@
+<div class="container">
+  <br>
+  <h5>{{subTitulo}}</h5>
+  <app-mensagem [success]="this.success" [message]="this.message"></app-mensagem>
+
+  <div class="row">
+    <div class="col s11"></div>
+    <div class="col s1">
+     <a routerLink="/produto"> <img src="assets\images\plus.png" height="50" /> </a>
+  </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+          <th>id</th>
+          <th>Descrição</th>
+          <th>Categoria</th>
+          <th>Marca</th>
+          <th>Status</th>
+          <th>Açoes</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Sabao em po</td>
+        <td>Limpeza</td>
+        <td>OMO</td>
+        <td>Ativo</td>
+        <td><a [routerLink]="['/produto']" [queryParams]="{id: 1}"><img src="assets\images\editar.png" height="24" /></a>&nbsp; &nbsp;&nbsp; <a><img src="assets\images\excluir.png" height="24" /></a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>guarana</td>
+        <td>bebidas</td>
+        <td>Antartica</td>
+        <td>Ativo</td>
+        <td><a [routerLink]="['/produto']" [queryParams]="{id: 2}"><img src="assets\images\editar.png" height="24" /></a>&nbsp;&nbsp;&nbsp;  <a><img src="assets\images\excluir.png" height="24" /></a></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>

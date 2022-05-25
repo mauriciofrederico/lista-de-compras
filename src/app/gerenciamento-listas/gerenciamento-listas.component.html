@@ -1,0 +1,46 @@
+<div class="container">
+  <br>
+  <h5>{{subTitulo}}</h5>
+  <app-mensagem [success]="this.success" [message]="this.message"></app-mensagem>
+
+  <div class="row">
+    <div class="col s11"></div>
+    <div class="col s1">
+     <a routerLink="/lista"> <img src="assets\images\plus.png" height="50" /> </a>
+  </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+          <th>id</th>
+          <th>Nome Lista</th>
+          <th>Quantidade de Itens</th>
+          <th>Quantidade de Itens Baixados</th>
+
+          <th>Comandos</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Lista Mercado 01</td>
+        <td>2</td>
+        <td>1</td>
+
+        <td><a><img src="assets\images\editar.png" height="24" /></a>&nbsp; &nbsp;&nbsp; <a><img src="assets\images\excluir.png" height="24" /></a>&nbsp; &nbsp;&nbsp; <a [routerLink]="['/listas/checklist',1]" ><img src="assets\images\checklist.png" height="24" /></a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Lista Mercado 02</td>
+        <td>5</td>
+        <td>0</td>
+
+        <td><a><img src="assets\images\editar.png" height="24" /></a>&nbsp; &nbsp;&nbsp; <a><img src="assets\images\excluir.png" height="24" /></a>&nbsp; &nbsp;&nbsp; <a [routerLink]="['/listas/checklist',2]" ><img src="assets\images\checklist.png" height="24" /></a></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>

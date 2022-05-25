@@ -1,22 +1,20 @@
 <nav>
     <div class="nav-wrapper bgColor ">
 
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <a  data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
-            <li><a href="" class="black-text">Home</a></li>
-            <li><a href="" class="black-text">Gerenciamento de Produtos</a></li>
-            <li><a href="" class="black-text">Gerenciamento de Listas</a></li>
+            <li><a routerLink=""  class="black-text">Home</a></li>
+            <li><a routerLink="/produtos" class="black-text">Gerenciamento de Produtos</a></li>
+            <li><a routerLink="/listas" class="black-text">Gerenciamento de Listas</a></li>
 
         </ul>
-        <ul class="right hide-on-med-and-down">
-            <li><a class="black-text">Sair</a></li>
-        </ul>
+
     </div>
 </nav>
 
 <ul class="sidenav" id="mobile-demo" #mobile>
-    <li><a href="">Home</a></li>
-    <li><a href="">Gerenciamento de Produtos</a></li>
-    <li><a href="">Gerenciamento de Listas</a></li>
-    <li><a href="">Sair</a></li>
+    <li><a routerLink="">Home</a></li>
+    <li><a routerLink="/produtos">Gerenciamento de Produtos</a></li>
+    <li><a routerLink="/listas">Gerenciamento de Listas</a></li>
+
 </ul>
