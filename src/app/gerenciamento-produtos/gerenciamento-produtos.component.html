@@ -10,10 +10,10 @@
   </div>
   </div>
 
-  <table>
+  <table *ngIf="!produtos || produtos!.length >0">
     <thead>
-      <tr>
-          <th>id</th>
+      <tr >
+          <th>Id</th>
           <th>Descrição</th>
           <th>Categoria</th>
           <th>Marca</th>
@@ -23,24 +23,26 @@
     </thead>
 
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>Sabao em po</td>
-        <td>Limpeza</td>
-        <td>OMO</td>
-        <td>Ativo</td>
-        <td><a [routerLink]="['/produto']" [queryParams]="{id: 1}"><img src="assets\images\editar.png" height="24" /></a>&nbsp; &nbsp;&nbsp; <a><img src="assets\images\excluir.png" height="24" /></a></td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>guarana</td>
-        <td>bebidas</td>
-        <td>Antartica</td>
-        <td>Ativo</td>
-        <td><a [routerLink]="['/produto']" [queryParams]="{id: 2}"><img src="assets\images\editar.png" height="24" /></a>&nbsp;&nbsp;&nbsp;  <a><img src="assets\images\excluir.png" height="24" /></a></td>
+
+      <tr *ngFor="let produto of produtos">
+        <td>{{produto.id}}</td>
+        <td>{{produto.descricao}}</td>
+        <td>{{produto.categoria}}</td>
+        <td>{{produto.marca}}</td>
+        <td>{{produto.ativo}}</td>
+        <td><a [routerLink]="['/produto']" [queryParams]="{id: produto.id}"><img src="assets\images\editar.png" height="24" /></a>&nbsp; &nbsp;&nbsp; <a><img src="assets\images\excluir.png" height="24" /></a></td>
       </tr>
 
     </tbody>
   </table>
+  <div *ngIf="!produtos || produtos!.length == 0">
+    <div class="row">
+      <div class="center-align">
+        <span class="col s12 flow-text"
+          >Nenhum Produto Cadastrado</span
+        >
+      </div>
+    </div>
+  </div>
 
 </div>

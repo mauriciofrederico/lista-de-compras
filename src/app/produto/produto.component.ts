@@ -1,5 +1,13 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { ProdutoService } from './../service/produto.service';
+import { Constants } from 'src/app/util/constants';
+
+import { Component, NgModule, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Produto } from './../model/produto';
+import { Shared } from '../util/shared';
+import { NgForm } from '@angular/forms';
+
+
 
 
 @Component({
@@ -10,63 +18,64 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 
 export class ProdutoComponent implements OnInit {
+  @ViewChild('form') form!: NgForm;
   subTitulo!:string;
-  id:number;
-
-  descricao:string;
-  marca:string;
+  produto!:Produto;
+  novo:boolean=true;
   success = false;
   message = '';
   aviso="";
-  constructor(private route:ActivatedRoute, private router:Router) {
+  CATEGORIAS = Constants.CATEGORIAS;
 
-    this.id=0;
-    this.descricao="";
-    this.marca="";
+  constructor(private route:ActivatedRoute, private router:Router, private produtoService:ProdutoService) {
+
+
    }
 
+   ngAfterViewInit() {
+    var elems = document.querySelectorAll('select');
+    M.FormSelect.init(elems, {});
+  }
+
   ngOnInit(): void {
+
     this.subTitulo ="Cadastrar Produto";
+    Shared.initializeWebStorage();
+    this.produto = new Produto('','','');
+
+
 this.route.queryParams.subscribe((params)=>
 {//por enquanto esta fixo
-  this.subTitulo ="Alterar Produto";
-  if (params['id']==1){
-    this.id=1;
-    this.descricao="Sabao em po";
-    this.marca="OMO";
-  }else if(params['id']==2){
-    this.id=2;
-    this.descricao="guarana";
-    this.marca="antartica";
+  if (params['id']>0){
+    this.subTitulo ="Alterar Produto";
+    this.produto = this.produtoService.getProduto(params['id'])
+    if (this.produto==null){
+      this.produto = new Produto('','','');
+    }
+    this.novo=false;
   }
+
 })
+  }
+  onSelectChange(event: Event) {
+    this.produto.categoria = (event.target as HTMLInputElement).value;
+debugger
   }
 
   onSubmit(){
-    if (this.descricao==""){
-      this.success = false;
-      this.message = 'Favor digitar a descrição do produto';
-      this.id=0;
-      return false;
-    }
-    if (this.marca==""){
-      this.success = false;
-      this.message = 'Favor digitar a marca do produto';
-      this.id=0;
-      return false;
-    }
+    if (this.novo){
+    this.produto.id = this.produtoService.geraID();
+    this.produtoService.save(this.produto);
     this.success=true;
-    this.message= `Produto ${this.descricao} cadastrado com sucesso`;
-    this.id=1;
-        return true;
-  }
+    this.message= `Produto ${this.produto.descricao} cadastrado com sucesso`;
+    }
+
+   }
 
   onClickLimpar(){
-    this.id=0;
-    this.descricao="";
-    this.marca="";
-    this.message="";
-    window.alert("Dados Limpos")
+    this.produto = new Produto('','','');
+
+    this.form.reset();
 
   }
   onAvisoEvent(event:string){
