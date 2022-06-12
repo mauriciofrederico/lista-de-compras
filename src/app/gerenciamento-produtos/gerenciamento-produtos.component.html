@@ -30,7 +30,7 @@
         <td>{{produto.categoria}}</td>
         <td>{{produto.marca}}</td>
         <td>{{produto.ativo}}</td>
-        <td><a [routerLink]="['/produto']" [queryParams]="{id: produto.id}"><img src="assets\images\editar.png" height="24" /></a>&nbsp; &nbsp;&nbsp; <a><img src="assets\images\excluir.png" height="24" /></a></td>
+        <td><a [routerLink]="['/produto']" [queryParams]="{id: produto.id}"><img src="assets\images\editar.png" height="24" /></a>&nbsp; &nbsp;&nbsp; <a (click)="onDelete(produto)"><img src="assets\images\excluir.png" height="24" /></a></td>
       </tr>
 
     </tbody>

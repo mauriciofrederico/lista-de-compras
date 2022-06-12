@@ -34,7 +34,7 @@
                 <div class="input-field col s9">
                     <select name="categoria" (change)="this.onSelectChange($event)" [(ngModel)]="this.produto.categoria" required #categoria="ngModel">
                       <option value="" selected disabled>Escolha a Categoria</option>
-                      <option *ngFor="let categoria of CATEGORIAS" [selected]="this.produto.categoria== categoria.id" value="{{categoria.id}}">{{categoria.descricao}}</option>
+                      <option *ngFor="let categoria of CATEGORIAS"  value="{{categoria.id}}">{{categoria.descricao}}</option>
 
                     </select>
                     <label>Categoria</label>

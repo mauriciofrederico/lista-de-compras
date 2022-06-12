@@ -1,0 +1,39 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "descricao": "Sabao em po 2",
+      "categoria": "2",
+      "marca": "OMO 2",
+      "ativo": true
+    },
+    {
+      "id": 2,
+      "descricao": "Guarana",
+      "categoria": "1",
+      "marca": "Antartica",
+      "ativo": true
+    },
+    {
+      "descricao": "Carne",
+      "categoria": "2",
+      "marca": "Patinho",
+      "ativo": true,
+      "id": 3
+    },
+    {
+      "descricao": "Novo Teste",
+      "categoria": "1",
+      "marca": "teste 2",
+      "ativo": true,
+      "id": 4
+    },
+    {
+      "descricao": "Produto novo ",
+      "categoria": "3",
+      "marca": "teste",
+      "ativo": true,
+      "id": 5
+    }
+  ]
+}
