@@ -32,8 +32,34 @@
       "descricao": "Produto novo ",
       "categoria": "3",
       "marca": "teste",
-      "ativo": true,
+      "ativo": false,
       "id": 5
+    }
+  ],
+  "listas": [
+    {
+      "nome": "Lista 01 com itens inseridos direto no banco",
+      "id": 1
+    },
+    {
+      "nome": "lista sem itens funcao nao desenvolvida",
+      "id": 2
+    }
+  ],
+  "itens": [
+    {
+      "id": 1,
+      "listaId": 1,
+      "produtoId": 1,
+      "quantidade": 3,
+      "comprado": false
+    },
+    {
+      "id": 2,
+      "listaId": 1,
+      "produtoId": 2,
+      "quantidade": 5,
+      "comprado": true
     }
   ]
 }

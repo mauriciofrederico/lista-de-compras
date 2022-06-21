@@ -1,0 +1,29 @@
+<div class="container">
+  <br>
+  <h5>{{subTitulo}}</h5>
+  <div class="row">
+    <app-mensagem [success]="this.success" [message]="this.message"></app-mensagem>
+
+      <form class="col s12" #form="ngForm">
+        <div class="row">
+          <div class="input-field col s9">
+              <input id="produtoId" name="produtoId" type="text" class="validate" [(ngModel)]="this.item.produtoId" #produto="ngModel"  pattern="^[0-9]*" required>
+              <label for="produtoId">Codigo do Produto</label>
+              <div class="red-text" [hidden]="produto.valid || produto.untouched">
+                  Por favor, informe o codigo do produto.
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s9">
+            <input id="quantidade" name="quantidade" type="text" class="validate" [(ngModel)]="this.item.quantidade" #quantidade="ngModel"  pattern="^[0-9]*" required>
+            <label for="quantidade">Quantidade</label>
+            <div class="red-text" [hidden]="quantidade.valid || quantidade.untouched">
+                Por favor, informe a Quantidade.
+            </div>
+        </div>
+    </div>
+      </form>
+
+  </div>
+</div>

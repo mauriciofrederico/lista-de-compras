@@ -15,6 +15,9 @@ import { HomeComponent } from './home/home.component';
 import { MensagemComponent } from './mensagem/mensagem.component';
 import { ChecklistComponent } from './checklist/checklist.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ListaComponent } from './lista/lista.component';
+import { ItemComponent } from './item/item.component';
+import { StatusPipe } from './pipes/status.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HomeComponent,
     MensagemComponent,
     ChecklistComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ListaComponent,
+    ItemComponent,
+    StatusPipe
   ],
   imports: [
     BrowserModule,

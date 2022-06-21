@@ -15,15 +15,7 @@ export class ProdutoService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
-  constructor(private httpClient: HttpClient) {
-    // this.produtos = WebStorageUtil.get(Constants.PRODUTOS_KEY);
-  }
-
-  saves(produto: Produto) {
-    this.produtos = WebStorageUtil.get(Constants.PRODUTOS_KEY);
-    this.produtos.push(produto);
-    WebStorageUtil.set(Constants.PRODUTOS_KEY, this.produtos);
-  }
+  constructor(private httpClient: HttpClient) {}
 
   save(produto: Produto): Promise<Produto | void> {
     return this.httpClient
