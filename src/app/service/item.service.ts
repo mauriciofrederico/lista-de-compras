@@ -20,12 +20,12 @@ export class ItemService {
   save(item: Item): Observable<Item> {
     return this.httpClient.post<Item>(
       this.URL,
-      JSON.stringify(item),
+      item.toString(),
       this.httpOptions
     );
   }
 
-  async TemItens(listaId: Number): Promise<boolean> {
+  async temItens(listaId: Number): Promise<boolean> {
     let itens = await this.httpClient
       .get<Item[]>(`${this.URL}?listaId=${listaId}`)
       .toPromise();
@@ -34,6 +34,14 @@ export class ItemService {
     } else {
       return false;
     }
+  }
+
+  produtoJaCadastrado(item: Item): Promise<Item[] | void> {
+    return this.httpClient
+      .get<Item[]>(
+        `${this.URL}?listaId=${item.listaId}&produtoId=${item.produtoId}`
+      )
+      .toPromise();
   }
 
   getItensByListaId(
@@ -56,7 +64,7 @@ export class ItemService {
   update(item: Item): Observable<Item> {
     return this.httpClient.put<Item>(
       `${this.URL}/${item.id}`,
-      JSON.stringify(item),
+      item.toString(),
       this.httpOptions
     );
   }

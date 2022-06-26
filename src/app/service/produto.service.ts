@@ -31,6 +31,14 @@ export class ProdutoService {
       .get<Produto[]>(`${this.URL}?_sort=${sort}&_order=${order}`)
       .toPromise();
   }
+  getProdutosAtivos(
+    order: String = 'Asc',
+    sort: String = 'id'
+  ): Promise<Produto[] | void> {
+    return this.httpClient
+      .get<Produto[]>(`${this.URL}?ativo=true&_sort=${sort}&_order=${order}`)
+      .toPromise();
+  }
 
   getProduto(id: number): Promise<Produto | void> {
     return this.httpClient.get<Produto>(`${this.URL}/${id}`).toPromise();
@@ -57,4 +65,5 @@ export class ProdutoService {
   delete(id: Number): Promise<Produto | void> {
     return this.httpClient.delete<Produto>(`${this.URL}/${id}`).toPromise();
   }
+
 }

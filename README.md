@@ -1,8 +1,14 @@
 # lista-de-compras
 Aplicativo desenvolvido na Aula de Frameworks web
 
+O Aplicativo  tem 3 funcionalidades principais: Cadastrar os produtos, Cadastrar as Listas 
+                                                e fazer o checklist dos produtos comprados
+
 # Prototipo
 https://www.figma.com/file/mZLZHkHRD2mJ5qDNCI1g8t/Aplicativo-Lista-de-Compra?node-id=1%3A2
+
+# Link GH Pages
+https://mauriciofrederico.github.io/lista-de-compras/
 
 # Checklist 
 - (x)Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop. 
@@ -21,5 +27,5 @@ https://www.figma.com/file/mZLZHkHRD2mJ5qDNCI1g8t/Aplicativo-Lista-de-Compra?nod
 - (x)Cadastrar uma entidade no JSON Server. 
 - (x)Apresentar uma lista de dados com a diretiva estrutural ngFor. 
 - (x)Usar a diretiva ngIf 
-- ( )Formatar a apresentação de dados com Pipes. 
-- ( )Build e deploy da aplicação.
+- (x)Formatar a apresentação de dados com Pipes. 
+- (x)Build e deploy da aplicação.

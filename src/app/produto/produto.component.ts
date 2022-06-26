@@ -1,7 +1,7 @@
 import { ProdutoService } from './../service/produto.service';
 import { Constants } from 'src/app/util/constants';
 
-import { Component, NgModule, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from './../model/produto';
 import { Shared } from '../util/shared';
@@ -38,8 +38,8 @@ export class ProdutoComponent implements OnInit {
     Shared.initializeWebStorage();
     this.produto = new Produto('', '', '');
 
+
     this.route.queryParams.subscribe((params) => {
-      //por enquanto esta fixo
       if (params['id'] > 0) {
         this.produtoService
           .getProduto(params['id'])
@@ -47,6 +47,7 @@ export class ProdutoComponent implements OnInit {
             this.produto = p;
             this.subTitulo = 'Alterar Produto';
             this.novo = false;
+
           })
           .catch((e) => {
             this.success = false;
@@ -61,9 +62,7 @@ export class ProdutoComponent implements OnInit {
 
   onSubmit() {
     if (this.novo) {
-      //this.produto.id = this.produtoService.geraID();
 
-      // this.produtoService.save(this.produto);
       let p1 = this.produtoService.save(this.produto);
       Promise.all([p1])
         .then(() => {

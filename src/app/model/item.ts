@@ -1,14 +1,21 @@
 export class Item {
   id!: number;
-  quantidade: number;
+  quantidade!: number;
   comprado: boolean;
   listaId: number;
-  produtoId: number;
+  produtoId!: number;
 
-  constructor(quantidade: number, listaId: number, produtoId: number) {
-    this.quantidade = quantidade;
+  constructor(listaId: number) {
+    this.quantidade = 0;
     this.comprado = false;
     this.listaId = listaId;
-    this.produtoId = produtoId;
+    this.produtoId = 0;
+  }
+  toString(): string {
+    return `{"quantidade":${Number(this.quantidade)},"comprado":${Boolean(
+      this.comprado
+    )},"listaId":${Number(
+      this.listaId
+    )},"produtoId":${this.produtoId.valueOf()}}`;
   }
 }

@@ -1,2 +1,24 @@
-<p>checklist works!</p>
-<p>recebeu como parametro o id:{{this.id}}</p>
+<br />
+<h5>{{ subTitulo | uppercase }}</h5>
+<br />
+<table *ngIf="!itens || itens!.length > 0">
+  <thead>
+    <tr>
+      <th>Produto</th>
+      <th>Marca</th>
+      <th>Quantidade</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr
+      *ngFor="let item of itens"
+      [class.riscar]="item.item.comprado"
+      (click)="marcar(item.item)"
+    >
+      <td>{{ item.produto.descricao }}</td>
+      <td>{{ item.produto.marca }}</td>
+      <td>{{ item.item.quantidade }}</td>
+    </tr>
+  </tbody>
+</table>

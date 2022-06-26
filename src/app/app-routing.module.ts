@@ -5,24 +5,23 @@ import { ProdutoComponent } from './produto/produto.component';
 import { ListaComponent } from './lista/lista.component';
 import { GerenciamentoListasComponent } from './gerenciamento-listas/gerenciamento-listas.component';
 import { GerenciamentoProdutosComponent } from './gerenciamento-produtos/gerenciamento-produtos.component';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ItemComponent } from './item/item.component';
 
 const routes: Routes = [
-  {path:'produtos',component: GerenciamentoProdutosComponent},
-  {path:'listas',component: GerenciamentoListasComponent},
-  {path:'produto',component: ProdutoComponent},
-  {path:'lista',component: ListaComponent},
-  {path:'lista/item/:id',component: ListaComponent},
-  {path:'listas/checklist/:id',component: ChecklistComponent},
-  {path:'',component:HomeComponent },
-  {path:'**',component:PageNotFoundComponent}
-
-
+  { path: 'produtos', component: GerenciamentoProdutosComponent },
+  { path: 'listas', component: GerenciamentoListasComponent },
+  { path: 'produto', component: ProdutoComponent },
+  { path: 'lista', component: ListaComponent },
+  { path: 'lista/item/:id', component: ItemComponent },
+  { path: 'listas/checklist/:id', component: ChecklistComponent },
+  { path: '', component: HomeComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

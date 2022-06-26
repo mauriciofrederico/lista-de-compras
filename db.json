@@ -1,65 +1,47 @@
 {
   "produtos": [
     {
-      "id": 1,
-      "descricao": "Sabao em po 2",
-      "categoria": "2",
-      "marca": "OMO 2",
-      "ativo": true
-    },
-    {
-      "id": 2,
-      "descricao": "Guarana",
-      "categoria": "1",
-      "marca": "Antartica",
-      "ativo": true
-    },
-    {
-      "descricao": "Carne",
-      "categoria": "2",
-      "marca": "Patinho",
+      "descricao": "Sabao em po",
+      "categoria": "10",
+      "marca": "OMO",
       "ativo": true,
-      "id": 3
+      "id": 1
     },
     {
-      "descricao": "Novo Teste",
-      "categoria": "1",
-      "marca": "teste 2",
+      "descricao": "Suco de Laranja",
+      "categoria": "2",
+      "marca": "Natural One",
       "ativo": true,
-      "id": 4
+      "id": 2
     },
     {
-      "descricao": "Produto novo ",
-      "categoria": "3",
-      "marca": "teste",
+      "descricao": "Leite em po  Desativado",
+      "categoria": "4",
+      "marca": "Ninho",
       "ativo": false,
-      "id": 5
+      "id": 3
     }
   ],
   "listas": [
     {
-      "nome": "Lista 01 com itens inseridos direto no banco",
+      "nome": "Minha Primeira Lista",
       "id": 1
-    },
-    {
-      "nome": "lista sem itens funcao nao desenvolvida",
-      "id": 2
     }
   ],
   "itens": [
     {
-      "id": 1,
-      "listaId": 1,
-      "produtoId": 1,
-      "quantidade": 3,
-      "comprado": false
-    },
-    {
-      "id": 2,
+      "quantidade": 1,
+      "comprado": false,
       "listaId": 1,
       "produtoId": 2,
-      "quantidade": 5,
-      "comprado": true
+      "id": 1
+    },
+    {
+      "quantidade": 1,
+      "comprado": true,
+      "listaId": 1,
+      "produtoId": 1,
+      "id": 2
     }
   ]
 }
